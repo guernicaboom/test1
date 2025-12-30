@@ -7,7 +7,7 @@ import me.alpha432.oyvey.features.settings.Setting;
 import me.alpha432.oyvey.util.TextUtil;
 
 public class Watermark extends HudModule {
-    public Setting<String> text = str("Text", OyVey.NAME);
+    public Setting<String> text = str("Text", 6foot.NAME);
 
     public Watermark() {
         super("Watermark", "Display watermark", 100, 10);
@@ -18,10 +18,10 @@ public class Watermark extends HudModule {
         super.render(e);
 
         e.getContext().drawString(mc.font,
-                TextUtil.text("{global} %s {} %s", text.getValue(), OyVey.VERSION),
+                TextUtil.text("{global} %s {} %s", text.getValue(), 6foot.VERSION),
                 (int) getX(), (int) getY(), -1);
 
-        String watermarkString = text.getValue() + " " + OyVey.VERSION;
+        String watermarkString = text.getValue() + " " + 6foot.VERSION;
         setWidth(mc.font.width(watermarkString));
         setHeight(mc.font.lineHeight);
     }
